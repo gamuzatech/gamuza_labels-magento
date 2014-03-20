@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+/*
+ * Gamuza Labels - Labels for magento platform.
+ * Copyright (C) 2013 Gamuza Technologies (http://www.gamuza.com.br/)
+ * Author: Eneias Ramos de Melo <eneias@gamuza.com.br>
+ *
+ * This library is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU Library General Public
+ * License as published by the Free Software Foundation; either
+ * version 2 of the License, or (at your option) any later version.
+ *
+ * This library is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ * Library General Public License for more details.
+ *
+ * You should have received a copy of the GNU Library General Public
+ * License along with this library; if not, write to the
+ * Free Software Foundation, Inc., 51 Franklin St, Fifth Floor,
+ * Boston, MA  02110-1301, USA.
+ */
+
+/*
+ * See the AUTHORS file for a list of people on the Gamuza Team.
+ * See the ChangeLog files for a list of changes.
+ * These files are distributed with Gamuza_Labels at http://code.google.com/p/gamuzaopen/.
+ */
+-->
+
+<config>
+  <modules>
+    <Gamuza_Labels>
+      <version>0.0.1</version>
+    </Gamuza_Labels>
+  </modules>
+  <global>
+    <helpers>
+      <labels>
+        <class>Gamuza_Labels_Helper</class>
+      </labels>
+    </helpers>
+	<blocks>
+	  <labels>
+		<class>Gamuza_Labels_Block</class>
+	  </labels>
+	  <carriers>
+	    <rewrite>
+		<adminhtml_carriers_grid>Gamuza_Labels_Block_Adminhtml_Carriers_Grid</adminhtml_carriers_grid>
+	    </rewrite>
+	  </carriers>
+	</blocks>
+	<models>
+	  <labels>
+		<class>Gamuza_Labels_Model</class>
+		<resourceModel>labels_mysql4</resourceModel>
+	  </labels>
+	  <labels_mysql4>
+		<class>Gamuza_Labels_Model_Mysql4</class>
+		<entities>
+		  <ranges>
+			<table>gamuza_labels_ranges</table>
+		  </ranges>
+		  <children>
+			<table>gamuza_labels_children</table>
+		  </children>
+        </entities>
+	  </labels_mysql4>
+	</models>
+	<resources>
+	  <labels_setup>
+		<setup>
+		  <module>Gamuza_Labels</module>
+		</setup>
+		<connection>
+		  <use>core_setup</use>
+		</connection>
+	  </labels_setup>
+	  <labels_write>
+		<connection>
+		  <use>core_write</use>
+		</connection>
+	  </labels_write>
+	  <labels_read>
+		<connection>
+		  <use>core_read</use>
+		</connection>
+	  </labels_read>
+	</resources>
+  </global>
+  <admin>
+	<routers>
+	  <labels>
+	    <use>admin</use>
+		<args>
+		  <module>Gamuza_Labels</module>
+		  <frontName>labels</frontName>
+		</args>
+	  </labels>
+	</routers>
+  </admin>
+    <frontend>
+        <translate>
+            <modules>
+                <Gamuza_Labels>
+                    <files>
+                        <default>Gamuza_Labels.csv</default>
+                    </files>
+                </Gamuza_Labels>
+            </modules>
+        </translate>
+        <layout>
+            <updates>
+                <labels>
+                    <file>labels.xml</file>
+                </labels>
+            </updates>
+        </layout>
+    </frontend>
+    <adminhtml>
+        <translate>
+            <modules>
+                <Gamuza_Labels>
+                    <files>
+                        <default>Gamuza_Labels.csv</default>
+                    </files>
+                </Gamuza_Labels>
+            </modules>
+        </translate>
+        <layout>
+            <updates>
+                <labels>
+                    <file>labels.xml</file>
+                </labels>
+            </updates>
+        </layout>
+    </adminhtml>
+	<default>
+		<labels>
+			<settings>
+				<barcode><![CDATA[http://barcode.gamuza.com.br/barcode.php]]></barcode>
+			</settings>
+		</labels>
+	</default>
+</config> 
+
