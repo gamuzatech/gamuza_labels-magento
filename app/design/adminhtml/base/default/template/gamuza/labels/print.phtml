@@ -1,0 +1,105 @@
+<!--
+/*
+ * Gamuza Labels - Labels for magento platform.
+ * Copyright (C) 2013 Gamuza Technologies (http://www.gamuza.com.br/)
+ * Author: Eneias Ramos de Melo <eneias@gamuza.com.br>
+ *
+ * This library is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU Library General Public
+ * License as published by the Free Software Foundation; either
+ * version 2 of the License, or (at your option) any later version.
+ *
+ * This library is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ * Library General Public License for more details.
+ *
+ * You should have received a copy of the GNU Library General Public
+ * License along with this library; if not, write to the
+ * Free Software Foundation, Inc., 51 Franklin St, Fifth Floor,
+ * Boston, MA  02110-1301, USA.
+ */
+
+/*
+ * See the AUTHORS file for a list of people on the Gamuza Team.
+ * See the ChangeLog files for a list of changes.
+ * These files are distributed with Gamuza_Labels at http://code.google.com/p/gamuzaopen/.
+ */
+-->
+
+<style type="text/css">
+ .labels-adminhtml-labels-print {line-height:10px;}
+</style>
+
+<table width="100%" cellpadding="0" cellspacing="0" border="0">
+<tr><td width="50%" align="center">
+<?php $company_logo = Mage::getStoreConfig ('labels/settings/company_logo'); ?>
+<img src="<?php echo Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_MEDIA) . "gamuza/labels/{$company_logo}"; ?>" alt="Company Logo" />
+</td><td width="50%" align="center">
+<?php $carrier_name = $this->getCarrierName (); ?>
+<?php $carrier_desc = $this->getCarrierDesc (); ?>
+<img src="<?php echo $this->getSkinUrl ("images/gamuza/labels/carriers/{$carrier_name}.png", array('_secure' => @$_SERVER['HTTPS'])) ?>" alt="<?=$carrier_desc;?>&nbsp;Carrier Logo" />
+</td></tr>
+</table>
+
+<center>
+<span style="font-family:Arial;font-size:10px; font-weight:bold;">
+<?php echo Mage::helper ('labels')->__('Contract Number') . ':' . chr(32) . Mage::getStoreConfig ("labels/{$carrier_name}/contract_number"); ?><br />
+<?php echo Mage::helper ('labels')->__('Unit Name') . ':' . chr(32) . Mage::getStoreConfig ("labels/{$carrier_name}/unit_name"); ?><br />
+</span><br/>
+
+<?php
+$barcode_url = Mage::getStoreConfig('labels/settings/barcode');
+$barcode = $this->getChildCode ();
+$barcode_params = $this->getBarcodeParams (array ('scale' => '2', 'width' => '258', 'height' => '115'));
+?>
+<img src="<?php echo "{$barcode_url}{$barcode_params}&code={$barcode}"; ?>" alt="Label Barcode" /><br/>
+</center><br/>
+
+<img src="<?php echo $this->getSkinUrl ("images/gamuza/labels/receiver.png", array('_secure' => @$_SERVER['HTTPS'])) ?>" alt="Receiver Logo" /><br>
+
+<span style="font-family:Arial; font-size:10px; font-weight:bold;">
+<?php
+$address = $this->getShippingAddress ();
+$postcode = $address->getPostcode ();
+?>
+
+<?php
+echo $address->getFirstname () . chr(32) .
+     $address->getLastname ();
+?><br />
+<?php echo strtoupper ($address->getCompany ()); ?><br />
+<?php echo $address->getStreet1 (); ?><br />
+<?php echo $address->getStreet2 (); ?><br />
+<?php echo Mage::helper ('labels')->__('Postcode') . ':' . chr(32) . $postcode; ?><br />
+<?php
+echo $address->getCity() . ' - ' .
+     $address->getRegion () . ' - ' .
+     Mage::getModel('directory/country')->load($address->getCountryId())->getName ();
+?><br />
+<br/>
+<center>
+<?php $barcode_params = $this->getBarcodeParams (array ('scale' => '2', 'width' => '242', 'height' => '92')); ?>
+<img src="<?php echo "{$barcode_url}{$barcode_params}&code={$postcode}"; ?>" alt="Postcode Barcode" /><br/>
+</center>
+</span><br/>
+
+<table width="100%">
+<tr><td width="50%" align="left">
+<span style="font-family:Arial; font-size:10px; font-weight:bold;">
+<?php // echo Mage::getStoreConfig ('general/store_information/name'); ?><br />
+<?php echo Mage::helper ('labels')->__('Sender') . ':'; ?><br/>
+<?php echo str_replace ('<br/>', "\n", Mage::getStoreConfig ('general/store_information/address')); ?><br />
+<?php // echo Mage::getStoreConfig ('general/store_information/phone'); ?>
+</span>
+</td><td width="50%" align="center">
+<?php $order_entity_id = $this->getOrder()->getIncrementId (); ?>
+<?php $barcode_params = $this->getBarcodeParams (array ('width' => '145', 'height' => '55')); ?>
+<img src="<?php echo "{$barcode_url}{$barcode_params}&code={$order_entity_id}"; ?>" alt="Order Entity ID Barcode" />
+</td></tr>
+</table>
+
+<script type="text/javascript">
+window.print ();
+</script>
+

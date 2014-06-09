@@ -1,0 +1,228 @@
+<!--
+/*
+ * Gamuza Labels - Labels for magento platform.
+ * Copyright (C) 2013 Gamuza Technologies (http://www.gamuza.com.br/)
+ * Author: Eneias Ramos de Melo <eneias@gamuza.com.br>
+ *
+ * This library is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU Library General Public
+ * License as published by the Free Software Foundation; either
+ * version 2 of the License, or (at your option) any later version.
+ *
+ * This library is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ * Library General Public License for more details.
+ *
+ * You should have received a copy of the GNU Library General Public
+ * License along with this library; if not, write to the
+ * Free Software Foundation, Inc., 51 Franklin St, Fifth Floor,
+ * Boston, MA  02110-1301, USA.
+ */
+
+/*
+ * See the AUTHORS file for a list of people on the Gamuza Team.
+ * See the ChangeLog files for a list of changes.
+ * These files are distributed with Gamuza_Labels at http://code.google.com/p/gamuzaopen/.
+ */
+-->
+
+<table style="width:1000px; border-right: black thin solid; border-top: black thin solid; border-left: black thin solid; border-bottom: black thin solid;">
+<tr>
+    <td colspan="2" style="width:12%;">
+        <?php $company_logo = Mage::getStoreConfig ('labels/settings/company_logo'); ?>
+		<img src="<?php echo Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_MEDIA) . "gamuza/labels/{$company_logo}"; ?>" alt="Company Logo" />
+	</td>
+    <td colspan="5" align="center">
+		<span style="font-size: 20pt">
+		<strong><?php echo Mage::helper ('labels')->__('LISTA DE POSTAGEM - ENCOMENDA A FATURAR'); ?></strong>
+		</span>
+    </td>
+    <td colspan="2" style="width:15%; vertical-align:top;" align="center">
+        <span style="font-size: 8pt">
+		<strong><?php echo Mage::helper ('labels')->__('DATA DA POSTAGEM'); ?></strong>
+        <br />
+        <?php echo strftime ('%c'); ?>
+		</span>
+    </td>
+</tr>
+
+<tr>
+    <td colspan="9">
+        <span style="font-size: 8pt">
+		<strong><?php echo Mage::helper ('labels')->__('NOME DO CLIENTE'); ?></strong>
+		<br />
+        <?php echo Mage::getStoreConfig ('general/store_information/name'); ?>
+		</span>
+    </td>
+</tr>
+
+<?php
+$carrier_name = $this->getCarrierName ();
+$contract_number = Mage::getStoreConfig ("labels/{$carrier_name}/contract_number");
+$card_number = Mage::getStoreConfig ("labels/{$carrier_name}/card_number");
+$unit_code = Mage::getStoreConfig ("labels/{$carrier_name}/unit_code");
+$unit_name = Mage::getStoreConfig ("labels/{$carrier_name}/unit_name");
+$carrier_title = Mage::getStoreConfig ("carriers/{$carrier_name}/title");
+?>
+
+<tr>
+    <td colspan="2" align="center">
+        <span style="font-size: 8pt">
+		<strong><?php echo Mage::helper ('labels')->__('N° CONTRATO:'); ?></strong>
+		<br />
+		<?php echo $contract_number; ?>
+		</span>
+    </td>
+    <td colspan="2" align="center">
+        <span style="font-size: 8pt">
+		<strong><?php echo Mage::helper('labels')->__('Nº CARTÃO DE POSTAGEM'); ?></strong>
+		<br />
+		<?php echo $card_number; ?>
+		</span>
+    </td>
+    <td colspan="2" align="center">
+        <span style="font-size: 8pt">
+		<strong><?php echo Mage::helper ('labels')->__('CÓDIGO DA UNIDADE'); ?></strong>
+		<br />
+		<?php echo $unit_code; ?>
+		</span>
+    </td>
+    <td colspan="3" align="center">
+        <span style="font-size: 8pt">
+		<strong><?php echo Mage::helper ('labels')->__('UNIDADE DE POSTAGEM:'); ?></strong>
+		<br />
+		<?php echo $unit_name; ?>
+		</span>
+    </td>
+</tr>
+
+<tr>
+    <td colspan="9" style="border-right: black thin solid; border-top: black thin solid; border-left: black thin solid; border-bottom: black thin solid;">
+        <span style="font-size: 10pt">
+		<strong><?php echo Mage::helper ('labels')->__('CÓDIGO DO SERVIÇO:'); ?></strong>
+		</span>
+		<?php $service_code = Mage::getStoreConfig ('labels/settings/service_code'); ?>
+        <span style="font-size: 10pt"><?php echo $service_code; ?></span>
+	</td>
+</tr>
+
+<tr>
+    <td align="center" rowspan="2" style="width:10%; border-right: black thin solid; border-top: black thin solid; border-left: black thin solid; border-bottom: black thin solid;">
+        <span style="font-size: 8pt">
+		<strong><?php echo Mage::helper ('labels')->__('Ordem'); ?></strong>
+		</span>
+    </td>
+    <td align="center" rowspan="2"  style="width:10%; border-right: black thin solid; border-top: black thin solid; border-left: black thin solid; border-bottom: black thin solid;">
+        <span style="font-size: 8pt">
+		<strong><?php echo Mage::helper ('labels')->__('Código do serviço'); ?></strong>
+		</span>
+    </td>
+    <td align="center" rowspan="2"  style="width:14%; border-right: black thin solid; border-top: black thin solid; border-left: black thin solid; border-bottom: black thin solid;">
+        <span style="font-size: 8pt">
+		<strong><?php echo Mage::helper('labels')->__('Tipo de serviço'); ?></strong>
+		</span>
+    </td>
+    <td align="center" rowspan="2"  style="width:12%; border-right: black thin solid; border-top: black thin solid; border-left: black thin solid; border-bottom: black thin solid;">
+        <span style="font-size: 8pt">
+		<strong><?php echo Mage::helper('labels')->__('Nº do Objeto'); ?></strong>
+		</span>
+    </td>
+    <td align="center" rowspan="2"  style="width:12%; border-right: black thin solid; border-top: black thin solid; border-left: black thin solid; border-bottom: black thin solid;">
+        <span style="font-size: 8pt">
+		<strong><?php echo Mage::helper ('labels')->__('CEP Destino'); ?></strong>
+		</span>
+    </td>
+    <td align="center" rowspan="2"  style="width:12%; border-right: black thin solid; border-top: black thin solid; border-left: black thin solid; border-bottom: black thin solid;">
+        <span style="font-size: 8pt">
+		<?php $currency_symbol = Mage::app()->getLocale()->currency (Mage::app()->getStore()->getCurrentCurrencyCode())->getSymbol() ?>
+		<strong><?php echo Mage::helper ('labels')->__("Valor declarado $currency_symbol"); ?></strong>
+		</span>
+    </td>
+    <td colspan="3" align="center"  style="width:30%; border-right: black thin solid; border-top: black thin solid; border-left: black thin solid; border-bottom: black thin solid;">
+        <span style="font-size: 8pt">
+		<strong><?php echo Mage::helper ('labels')->__('Serviço Adicional'); ?></strong>
+		</span>
+    </td>
+</tr>
+
+<tr>
+    <td style="width:10%; border-right: black thin solid; border-top: black thin solid; border-left: black thin solid; border-bottom: black thin solid;" align="center">
+        <span style="font-size: 8pt">
+		<strong><?php echo Mage::helper ('labels')->__('AR'); ?></strong>
+		</span>
+    </td>
+    <td style="width:10%; border-right: black thin solid; border-top: black thin solid; border-left: black thin solid; border-bottom: black thin solid;" align="center">
+        <span style="font-size: 8pt">
+		<strong><?php echo Mage::helper ('labels')->__('MP'); ?></strong>
+		</span>
+    </td>
+    <td style="width:10%; border-right: black thin solid; border-top: black thin solid; border-left: black thin solid; border-bottom: black thin solid;" align="center">
+        <span style="font-size: 8pt">
+		<strong><?php echo Mage::helper ('labels')->__('Coleta'); ?></strong>
+		</span>
+    </td>
+</tr>
+
+<tr>
+	<td colspan="9" >
+    	<table cellpadding="0" cellspacing="0" border="0" style="width:100%">
+        	<tbody>
+				<?php foreach ($orders_ids = $this->getOrdersIds () as $id => $value): ?>
+                    <tr align="center"  style="background-color:#E0E0E0">
+                        <td style="width:10%;"><?php echo $this->getOrderIncrementId ($value); ?></td>
+                        <td style="width:10%;"><?php echo $service_code; ?></td>
+                        <td style="width:14%;"><?php echo $carrier_title; ?></td>
+                        <td style="width:12%;"><?php echo $this->getChildCode ($value); ?></td>
+                        <td style="width:12%;"><?php echo $this->getOrder($value)->getShippingAddress()->getPostcode (); ?></td>
+                        <td style="width:12%;"><?php // echo number_format ($this->getOrder($value)->getGrandTotal (), 2, ',', '.'); ?></td>
+                        <td style="width:10%;"></td>
+                        <td style="width:10%;"></td>
+                        <td style="width:10%;"></td>
+                    </tr>
+				<?php endforeach ?>
+			</tbody>
+		</table>
+	</td>
+</tr>
+
+<tr>
+    <td colspan="2" style="border-right: black thin solid; border-top: black thin solid; border-left: black thin solid; vertical-align:top;">
+        <span style="font-size: 8pt"><?php echo Mage::helper ('labels')->__('CORREIOS - CARIMBO'); ?></span>
+    </td>
+    <td colspan="7" style="border-right: black thin solid; border-top: black thin solid; border-left: black thin solid; border-bottom: black thin solid;">
+        <span style="font-size: 8pt"><?php echo Mage::helper ('labels')->__('CONTRATANTE - ASSINATURA'); ?></span>
+        <br />
+        <br />
+    </td>
+</tr>
+
+<tr>
+    <td colspan="2" rowspan="2" style="border-right: black thin solid; border-bottom: black thin solid; border-left: black thin solid;">&nbsp;</td>
+	<td colspan="3" rowspan="2" style="border-right: black thin solid; border-bottom: black thin solid; border-left: black thin solid;">
+		<span style="font-size: 10pt">
+		<strong><?php echo Mage::helper ('labels')->__('Declaro que recebi:'); ?></strong>
+        <?php echo count ($orders_ids); ?> objeto(s)
+		</span>
+		<br />
+        <br />
+        <br />
+        <span style="font-size: 10pt; border-top: black thin solid;">
+		<?php echo Mage::helper ('labels')->__('CORREIOS - ASSINATURA E MATRÍCULA - <strong>COLETOR</strong>'); ?>
+		</span>
+    </td>
+    <td colspan="4" rowspan="2" style="border-right: black thin solid; border-bottom: black thin solid;">
+        <br />
+        <br />
+        <br />
+        <span style="font-size: 10pt; border-top: black thin solid;">
+		<?php echo Mage::helper ('labels')->__('CORREIOS - ASSINATURA E MATRÍCULA - <strong>CONFERENTE</strong>'); ?>
+		</span>
+    </td>
+</tr>
+</table>
+
+<script type="text/javascript">
+    window.print ();
+</script>
+

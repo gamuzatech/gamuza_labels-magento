@@ -33,7 +33,7 @@ extends Mage_Adminhtml_Block_Template
 	{
 		parent::__construct ();
 		
-		$this->setTemplate ('labels/report.phtml');
+		$this->setTemplate ('gamuza/labels/report.phtml');
 	}
 
 	public function getChildren ()

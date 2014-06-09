@@ -112,7 +112,7 @@
         <layout>
             <updates>
                 <labels>
-                    <file>labels.xml</file>
+                    <file>gamuza/labels.xml</file>
                 </labels>
             </updates>
         </layout>
@@ -130,7 +130,7 @@
         <layout>
             <updates>
                 <labels>
-                    <file>labels.xml</file>
+                    <file>gamuza/labels.xml</file>
                 </labels>
             </updates>
         </layout>

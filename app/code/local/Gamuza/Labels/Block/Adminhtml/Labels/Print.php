@@ -35,7 +35,7 @@ extends Mage_Adminhtml_Block_Template
 	{
 		parent::__construct ();
 		
-		$this->setTemplate ('labels/print.phtml');
+		$this->setTemplate ('gamuza/labels/print.phtml');
 	}
 
 	public function getPrint ()

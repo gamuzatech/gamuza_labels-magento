@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+/*
+ * Gamuza Labels - Labels for magento platform.
+ * Copyright (C) 2013 Gamuza Technologies (http://www.gamuza.com.br/)
+ * Author: Eneias Ramos de Melo <eneias@gamuza.com.br>
+ *
+ * This library is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU Library General Public
+ * License as published by the Free Software Foundation; either
+ * version 2 of the License, or (at your option) any later version.
+ *
+ * This library is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ * Library General Public License for more details.
+ *
+ * You should have received a copy of the GNU Library General Public
+ * License along with this library; if not, write to the
+ * Free Software Foundation, Inc., 51 Franklin St, Fifth Floor,
+ * Boston, MA  02110-1301, USA.
+ */
+
+/*
+ * See the AUTHORS file for a list of people on the Gamuza Team.
+ * See the ChangeLog files for a list of changes.
+ * These files are distributed with Gamuza_Labels at http://code.google.com/p/gamuzaopen/.
+ */
+-->
+
+<layout version="0.1.0">
+  <labels_adminhtml_ranges_index>
+	<reference name="content">
+	  <block type="labels/adminhtml_ranges" name="ranges" />
+	</reference>
+  </labels_adminhtml_ranges_index>
+  <labels_adminhtml_children_index>
+	<reference name="content">
+	  <block type="labels/adminhtml_children" name="children" />
+	</reference>
+  </labels_adminhtml_children_index>
+  <labels_adminhtml_reports_index>
+	<reference name="content">
+	  <block type="labels/adminhtml_reports" name="reports" />
+	</reference>
+  </labels_adminhtml_reports_index>
+  <labels_adminhtml_labels_carrier>
+      <reference name="head">
+         <action method="addCss"><stylesheet>css/gamuza/labels/carrier.css</stylesheet></action>
+         <action method="addItem"><type>skin_js</type><name>js/gamuza/labels/carrier.js</name><params/></action>
+      </reference>
+	<reference name="content">
+	  <block type="labels/adminhtml_labels_carrier" name="labels_carrier" />
+	  <remove name="global_notices" />
+	  <remove name="header" />
+	  <remove name="menu" />
+	  <remove name="notifications" />
+	  <remove name="footer" />
+	  <remove name="profiler" />
+	</reference>
+  </labels_adminhtml_labels_carrier>
+  <labels_adminhtml_labels_print>
+	<reference name="content">
+	  <block type="labels/adminhtml_labels_print" name="labels_print" />
+	  <remove name="head" />
+	  <remove name="global_notices" />
+	  <remove name="header" />
+	  <remove name="menu" />
+	  <remove name="notifications" />
+	  <remove name="footer" />
+	  <remove name="profiler" />
+	</reference>
+  </labels_adminhtml_labels_print>
+  <labels_adminhtml_labels_report>
+	<reference name="content">
+	  <block type="labels/adminhtml_labels_report" name="labels_report" />
+	  <remove name="head" />
+	  <remove name="global_notices" />
+	  <remove name="header" />
+	  <remove name="menu" />
+	  <remove name="notifications" />
+	  <remove name="footer" />
+	  <remove name="profiler" />
+	</reference>
+  </labels_adminhtml_labels_report>
+</layout>
+
