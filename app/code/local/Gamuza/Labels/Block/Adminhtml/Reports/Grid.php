@@ -41,14 +41,16 @@ extends Mage_Adminhtml_Block_Widget_Grid
 
 	protected function _prepareCollection()
 	{
+		$configModel = Mage::getModel ('utils/config');
+		
 		$collection = Mage::getModel('sales/order')->getCollection();
-		$collection->getSelect()->join (array('table_address' => 'sales_flat_order_address'),
+		$collection->getSelect()->join (array('table_address' => $configModel->getTableName ('sales/order_address')),
                                               'main_table.shipping_address_id = table_address.entity_id',
                                               array('postcode'));
-		$collection->getSelect()->join (array('table_children' => 'gamuza_labels_children'),
+		$collection->getSelect()->join (array('table_children' => $configModel->getTableName ('labels/children')),
                                               'main_table.entity_id = table_children.order_id',
                                               array('code'));
-		$collection->getSelect()->join (array('table_carriers' => 'gamuza_carriers'),
+		$collection->getSelect()->join (array('table_carriers' => $configModel->getTableName ('utils/carriers')),
                                               'table_children.carrier_id = table_carriers.id',
                                               array('table_carriers.id as carrier_id'));
                 $collection->addAttributeToFilter ('state', 'processing');
