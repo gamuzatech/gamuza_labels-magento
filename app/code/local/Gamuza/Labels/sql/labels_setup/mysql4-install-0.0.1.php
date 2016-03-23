@@ -30,7 +30,7 @@ $installer = $this;
 $installer->startSetup();
 
 $sqlBlock = <<<SQLBLOCK
-CREATE TABLE {$this->getTable ('gamuza_labels_ranges')}
+CREATE TABLE IF NOT EXISTS {$this->getTable ('gamuza_labels_ranges')}
 (
     id int(11) unsigned NOT NULL AUTO_INCREMENT,
     carrier_id int(11) unsigned NOT NULL,
@@ -50,7 +50,7 @@ CREATE TABLE {$this->getTable ('gamuza_labels_ranges')}
     KEY carrier_id (carrier_id)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1;
 
-CREATE TABLE {$this->getTable ('gamuza_labels_children')}
+CREATE TABLE IF NOT EXISTS {$this->getTable ('gamuza_labels_children')}
 (
     id int(11) unsigned NOT NULL AUTO_INCREMENT,
     range_id int(11) unsigned NOT NULL,
