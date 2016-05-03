@@ -78,15 +78,15 @@ a opção **Gerar Relatório** e enviar o arquivo para impressora ou Gerar um PD
 Dentro do pedido no painel administrativo, já faturado, clique no botão **etiqueta**
 para utilizar um rastreio gerado anteriormente no painel de etiquetas.
 
-**1º - Clique no botão etiquetas e seleção de rastreio disponível**
+**Clique no botão etiquetas e seleção de rastreio disponível**
 
 <img src="https://dl.dropboxusercontent.com/s/jkjgueci4dcmat0/gamuza-etiquetas-selecao-rastreio-disponivel.png" alt="" title="Gamuza Etiquetas - Magento - Seleção rastreio disponível" />
 
-**2º - Impressão**
+**Impressão**
 
 <img src="https://dl.dropboxusercontent.com/s/inbo8nlda8qhi8i/gamuza-etiquetas-impressao.png" alt="" title="Gamuza Etiquetas - Magento - Impressão" />
 
-OU:
+*Ou:*
 
 Acesse: Gamuza -> Gerenciar Relatórios de Etiquetas, marque um pedido
 e escolha a opção **Gerar Entregas** (as entregas dos pedidos serão criadas
@@ -94,7 +94,7 @@ com os códigos de rastreio já inseridos).
 
 **Gerando entregas automatizadas com o código de rastreio**
 
-*OBS: Para cada entrega será enviado um e-mail de pedido despachado com o código de rastreio.*
+*Obs: Para cada entrega será enviado um e-mail de pedido despachado com o código de rastreio.*
 
 <img src="https://dl.dropboxusercontent.com/s/gn5057bzen47p09/gamuza-etiquetas-gerando-entregas.png" alt="" title="Gamuza Etiquetas - Magento - Gerando entregas" />
 
