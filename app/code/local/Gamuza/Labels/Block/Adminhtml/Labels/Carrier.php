@@ -109,7 +109,7 @@ extends Mage_Adminhtml_Block_Widget_Form
 		));
 		
 		$fieldset->addField("carrier", "label", array(
-		"label" => '<strong>' . Mage::helper ('labels')->__('Carrier') . '</strong>',
+		"label" => Mage::helper ('labels')->__('Carrier'),
 		"value" => $carrier->getData ('description'),
 		));
 
@@ -121,7 +121,7 @@ extends Mage_Adminhtml_Block_Widget_Form
 			$carrier_desc = $carrier ['description'];
 		
 			$fieldset->addField("carrier_option_{$carrier_id}", "radio", array(
-			"label" => "<strong>$carrier_desc</strong>",
+			"label" => "{$carrier_desc}",
 			"class" => "required-entry",
 			"required" => true,
 			"name" => "carrier_id",
