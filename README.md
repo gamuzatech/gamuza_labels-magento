@@ -52,7 +52,7 @@ Nesse painel você configura os ranges que foram obtidos através dos Correios.
 
 No final de cada item cadastrado, selecione a opção **Gerar objetos** para criar os rastreios (objetos de etiquetas) que serão utilizados pelos pedidos.
 
-**OBS: Os rastreios já são gerados com o código verificador.**
+*Obs: Os rastreios já são gerados com o código verificador.*
 
 <img src="https://dl.dropbox.com/s/1z76jz169hwrw6k/gamuza-etiquetas-gerando-rastreios.png" alt="" title="Gamuza - Magento - Gerando rastreios" />
 
@@ -67,17 +67,34 @@ Neste painel conseguimos alterar manualmente cada rastreio gerado automaticament
 Para imprimir os relatórios, basta selecionar na mesma tela (Gamuza - Gerenciar Relatórios de Etiquetas)
 a opção **Gerar Relatório** e enviar o arquivo para impressora ou Gerar um PDF.
 
-<img src="https://dl.dropboxusercontent.com/s/ltzunpay9zyf2c3/gamuza-etiquetas-gerenciando-relatorios-etiquetas.png" alt="" title="Gamuza Etiquetas - Magento - Gerenciando relatórios de etiquetas" />
+<img src="https://dl.dropboxusercontent.com/s/9dul7ke1g8e7e3s/gamuza-etiquetas-gerando-relatorio.png" alt="" title="Gamuza Etiquetas - Magento - Gerenciando relatórios de etiquetas" />
+
+<img src="https://dl.dropboxusercontent.com/s/8f2oc5rq9ctom36/gamuza-etiquetas-relatorio.png" alt="" title="Gamuza Etiquetas - Magento - Relatório" />
 
 <h2>Geração de Etiquetas</h2>
 
-Para gerar a etiqueta há 2 formas:
+- Para gerar a etiqueta há 2 formas:
 
 Dentro do pedido no painel administrativo, já faturado, clique no botão **etiqueta**
 para utilizar um rastreio gerado anteriormente no painel de etiquetas.
+
+**1º - Clique no botão etiquetas e seleção de rastreio disponível**
+
+<img src="https://dl.dropboxusercontent.com/s/jkjgueci4dcmat0/gamuza-etiquetas-selecao-rastreio-disponivel.png" alt="" title="Gamuza Etiquetas - Magento - Seleção rastreio disponível" />
+
+**2º - Impressão**
+
+<img src="https://dl.dropboxusercontent.com/s/inbo8nlda8qhi8i/gamuza-etiquetas-impressao.png" alt="" title="Gamuza Etiquetas - Magento - Impressão" />
 
 OU:
 
 Acesse: Gamuza -> Gerenciar Relatórios de Etiquetas, marque um pedido
 e escolha a opção **Gerar Entregas** (as entregas dos pedidos serão criadas
 com os códigos de rastreio já inseridos).
+
+**Gerando entregas automatizadas com o código de rastreio**
+
+*OBS: Para cada entrega será enviado um e-mail de pedido despachado com o código de rastreio.*
+
+<img src="https://dl.dropboxusercontent.com/s/gn5057bzen47p09/gamuza-etiquetas-gerando-entregas.png" alt="" title="Gamuza Etiquetas - Magento - Gerando entregas" />
+
