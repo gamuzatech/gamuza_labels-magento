@@ -2,7 +2,7 @@
 
 **Compatível com a plataforma Magento CE versão 1.6 a 1.9**
 
-[Necessário módulo Gamuza_Utils](https://github.com/gamuzabrasil/gamuza_utils-magento)
+[Necessário módulo Gamuza_Utils](https://github.com/gamuzatech/gamuza_utils-magento)
 
 Junto com o nosso módulo de fretes, você pode fazer ainda mais.
 
@@ -18,7 +18,7 @@ Imprimir as etiquetas para os seus envios de uma maneira simples e descomplicada
 
     $ cd /path/to/magento
     $ modgit init
-    $ modgit add gamuza_labels https://github.com/gamuzabrasil/gamuza_labels-magento.git
+    $ modgit add gamuza_labels https://github.com/gamuzatech/gamuza_labels-magento.git
 
 **Instalação manual dos arquivos**
 
