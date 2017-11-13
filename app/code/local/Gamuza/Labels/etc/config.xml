@@ -134,6 +134,16 @@
                 </labels>
             </updates>
         </layout>
+        <events>
+            <adminhtml_block_html_before>
+                <observers>
+                    <labels_adminhtml_block_html_before>
+                        <class>labels/observer</class>
+                        <method>adminhtmlBlockHtmlBefore</method>
+                    </labels_adminhtml_block_html_before>
+                </observers>
+            </adminhtml_block_html_before>
+        </events>
     </adminhtml>
 	<default>
 		<labels>
