@@ -34,7 +34,7 @@
 <table width="100%" cellpadding="0" cellspacing="0" border="0">
 <tr><td width="50%" align="center">
 <?php $company_logo = Mage::getStoreConfig ('labels/settings/company_logo'); ?>
-<img src="<?php echo Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_MEDIA) . "gamuza/labels/{$company_logo}"; ?>" alt="Company Logo" />
+<img height="50" src="<?php echo Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_MEDIA) . "gamuza/labels/{$company_logo}"; ?>" alt="Company Logo" />
 </td><td width="50%" align="center">
 <?php $carrier_name = $this->getCarrierName (); ?>
 <?php $carrier_desc = $this->getCarrierDesc (); ?>
@@ -69,8 +69,7 @@ echo $address->getFirstname () . chr(32) .
      $address->getLastname ();
 ?><br />
 <?php echo strtoupper ($address->getCompany ()); ?><br />
-<?php echo $address->getStreet1 (); ?><br />
-<?php echo $address->getStreet2 (); ?><br />
+<?php echo implode ('<br/>', $address->getStreet ()); ?><br />
 <?php echo Mage::helper ('labels')->__('Postcode') . ':' . chr(32) . $postcode; ?><br />
 <?php
 echo $address->getCity() . ' - ' .
